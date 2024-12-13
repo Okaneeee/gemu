@@ -23,7 +23,7 @@ function getUserMedia(constraints) {
       return;
     }
   
-    var constraints = {video: {facingMode: "environment"}};
+    var constraints = {video: {facingMode: {exact: "environment"}}};
     constraints[type] = true;
     
     getUserMedia(constraints)
