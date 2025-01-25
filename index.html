@@ -2,18 +2,26 @@
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
-    <link rel="icon" type="image/svg+xml" href="./assets/icons/icon-512x512-any.png" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="icon" type="image/png" href="/assets/icons/icon-192x192-any.png" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
     <meta name="theme-color" content="#ffffff"/>
+    <meta name="description" content="Gemu is a PWA that allows the user to check if a game studio is ethical">
     <title>Gemu</title>
-    <link rel="manifest" href="/manifest.json">
+    <link rel="apple-touch-icon" href="/assets/icons/icon-192x192-any.png">
+    <link rel="manifest" href="/manifest.webmanifest">
   </head>
   <body>
     <div id="app">
-      <h1>Scan your QR/Bar code!</h1>
-      <div id="reader"></div>
-      <div id="result"></div>
+      <div id="scanner-page">
+        <h1>Scan your game QR/Bar code!</h1>
+        <div id="reader"></div>
+        <div id="result"></div>
+      </div>
+      <div id="game-page" style="display: none">
+        <button id="back-button" class="button">Back to Scanner</button>
+        <div id="game-info"></div>
+      </div>
     </div>
-    <script type="module" src="./main.js"></script>
+    <script type="module" src="/main.js"></script>
   </body>
 </html>
