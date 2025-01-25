@@ -1,6 +1,19 @@
-<head>
-    <!-- Instant redirection to the page we want -->
-    <meta http-equiv="refresh" content="0; url=./src/index.html" />
-    
-    <link rel="manifest" href="../manifest.json">
-</head>
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="icon" type="image/svg+xml" href="./assets/icons/icon-512x512-any.png" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="theme-color" content="#ffffff"/>
+    <title>Gemu</title>
+    <link rel="manifest" href="/manifest.json">
+  </head>
+  <body>
+    <div id="app">
+      <h1>Scan your QR/Bar code!</h1>
+      <div id="reader"></div>
+      <div id="result"></div>
+    </div>
+    <script type="module" src="./main.js"></script>
+  </body>
+</html>
