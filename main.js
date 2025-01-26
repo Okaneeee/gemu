@@ -3,6 +3,12 @@ import { Html5QrcodeScanner } from 'html5-qrcode';
 
 let html5QrcodeScanner;
 
+/**
+ * Fetch game details from the Steam API
+ * @param {string} appId - Steam App ID
+ * @returns {Object} Game details
+ * @see https://store.steampowered.com/api/appdetails
+ */
 async function fetchGameDetails(appId) {
   try {
     // Using cors-proxy.io as a CORS proxy
@@ -16,6 +22,10 @@ async function fetchGameDetails(appId) {
   }
 }
 
+/**
+ * Get a random ethical rating for a game studio
+ * @returns {Object} Random ethical rating
+ */
 function getRandomEthicalRating() {
   const ratings = [
     { status: 'Ethical', description: 'This studio has shown consistent ethical practices.', color: '#2ecc71' },
@@ -25,6 +35,10 @@ function getRandomEthicalRating() {
   return ratings[Math.floor(Math.random() * ratings.length)];
 }
 
+/**
+ * Show the game page with details
+ * @param {Object} gameData - Game details
+ */  
 function showGamePage(gameData) {
   const scannerPage = document.getElementById('scanner-page');
   const gamePage = document.getElementById('game-page');
@@ -71,6 +85,9 @@ function showGamePage(gameData) {
   }
 }
 
+/**
+ * Show the scanner page
+ */
 function showScannerPage() {
   const scannerPage = document.getElementById('scanner-page');
   const gamePage = document.getElementById('game-page');
@@ -81,6 +98,10 @@ function showScannerPage() {
   initializeScanner();
 }
 
+/**
+ * Handle successful QR code scan
+ * @param {string} decodedText - Decoded text from the QR code
+ */
 async function onScanSuccess(decodedText) {
   // Assuming the scanned text is a Steam App ID
   const appId = decodedText.trim();
@@ -99,6 +120,9 @@ function onScanFailure(error) {
   // Handle scan failure, usually better to just ignore
 }
 
+/**
+ * Initialize the QR code scanner
+ */
 function initializeScanner() {
   html5QrcodeScanner = new Html5QrcodeScanner(
     "reader",
